@@ -6,13 +6,19 @@ const normalMiddleware = require("./middleware/normalMiddleware");
 const app = express();
 const port = process.env.PORT || 5000;
 const userRoutes = require("./routes/userRoutes/index")
+const authenticationRoute = require("./routes/AuthenticationRoute/index")
+
 
 
 // normal middleware
 normalMiddleware(app);
 
+// authentication route 
+app.use(authenticationRoute)
+
 // user route 
 app.use(userRoutes)
+
 
 
 
