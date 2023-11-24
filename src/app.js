@@ -7,6 +7,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const userRoutes = require("./routes/userRoutes/index")
 const authenticationRoute = require("./routes/AuthenticationRoute/index")
+const contestRoute = require("./routes/Contest/index")
 
 
 
@@ -18,6 +19,9 @@ app.use(authenticationRoute)
 
 // user route 
 app.use(userRoutes)
+
+// contest route 
+app.use(contestRoute)
 
 
 
