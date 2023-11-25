@@ -4,6 +4,15 @@ const Payment = require("../../Model/userPaymentDetails");
 const getMycontest = async (req, res) => {
   try {
     const email = req.params.email;
+    const sortField = req.query.sortField;
+    const sortValue = req.query.sortValue;
+    
+    let sortObj = {}
+    if (sortField && sortValue) {
+        sortObj[sortField]=sortValue
+    }
+
+
     const findByEmail = await Payment.find({ email: email });
     const getContestId = findByEmail?.map((item) => item?.contestId);
     const option = {
@@ -11,7 +20,11 @@ const getMycontest = async (req, res) => {
         $in: getContestId,
       },
     };
-    const result = await Contest.find(option);
+
+    const page = parseInt(req.query.page);
+    const size = parseInt(req.query.size);
+    const skip = (page - 1) * size;
+    const result = await Contest.find(option).skip(skip).limit(size).sort(sortObj)
     res.send(result);
   } catch (error) {
     console.error(error);

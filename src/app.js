@@ -50,11 +50,12 @@ app.all("*", (req, res, next) => {
 // error handling middleware
 app.use(globalErrorHandler);
 
-const main = async () => {
-  await dbConnect();
-  app.listen(port, () => {
-    console.log(`Assignment 12 is running ${port}`);
-  });
-};
+// const main = async () => {
+//   await dbConnect();
+//   app.listen(port, () => {
+//     console.log(`Assignment 12 is running ${port}`);
+//   });
+// };
 
-main();
+// main();
+module.exports=app
