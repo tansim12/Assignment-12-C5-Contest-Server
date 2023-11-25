@@ -1,3 +1,6 @@
+require("dotenv").config();
+const stripe = require("stripe")(process.env.SK);
+
 
 const paymentIntant = async (req, res) => {
     const { price } = req.body;
@@ -14,3 +17,4 @@ const paymentIntant = async (req, res) => {
       clientSecret: paymentIntent.client_secret,
     });
   }
+  module.exports=paymentIntant
