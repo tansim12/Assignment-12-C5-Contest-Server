@@ -10,6 +10,7 @@ const authenticationRoute = require("./routes/AuthenticationRoute/index")
 const contestRoute = require("./routes/Contest/index")
 const paymentRouter = require("./routes/Payment/index")
 const currentRoleRoute = require("./routes/User Current Role/index")
+const myContestRouter = require("./routes/MyContest/index")
 
 
 
@@ -29,8 +30,10 @@ app.use(contestRoute)
 app.use(paymentRouter)
 
 // current role 
-
 app.use(currentRoleRoute)
+
+// get user base participate contest data 
+app.use(myContestRouter)
 
 
 
