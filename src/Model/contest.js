@@ -57,6 +57,11 @@ const ContestSchema = new Schema({
       type: String,
       required: true,
     },
+    winner: {
+      email: String,
+      image: String,
+      name: String,
+    },
   },
 });
 
