@@ -1,7 +1,11 @@
+const Payment = require("../../Model/userPaymentDetails");
+
 const userPaymentDetails = async (req, res) => {
     const info = req.body;
-    
-    const paymentResult = await userPaymentCollection.save(info);
-    
-    res.send({ paymentResult, deleteResult });
+    const newInfo = new Payment(info);
+    const paymentResult = await newInfo.save()
+    console.log(paymentResult);
+    res.send({ paymentResult });
   }
+
+  module.exports=userPaymentDetails

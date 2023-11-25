@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const PaymentDetails = new Schema({
-  name: {
+  participantName: {
     type: String,
     required: true,
   },
@@ -9,15 +9,32 @@ const PaymentDetails = new Schema({
     type: String,
     required: true,
   },
-  role: {
+  transactionId: {
     type: String,
     required: true,
   },
-  image: {
+  contestId: {
     type: String,
     required: true,
   },
+  price: {
+    type: Number,
+    required: true,
+  },
+  creatorEmail: {
+    type: String,
+    required: true,
+  },
+  creatorEmail: {
+    type: String,
+    required: true,
+  },
+  registerTime: {
+    type: Date,
+    required: true,
+  },
+
 });
 
 const Payment = model("Payment", PaymentDetails);
-module.exports = Payment;   // Payment is a collection name 
+module.exports = Payment; // Payment is a collection name
