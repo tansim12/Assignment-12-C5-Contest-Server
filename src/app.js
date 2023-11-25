@@ -8,6 +8,7 @@ const port = process.env.PORT || 5000;
 const userRoutes = require("./routes/userRoutes/index")
 const authenticationRoute = require("./routes/AuthenticationRoute/index")
 const contestRoute = require("./routes/Contest/index")
+const paymentRouter = require("./routes/Payment/index")
 
 
 
@@ -23,7 +24,8 @@ app.use(userRoutes)
 // contest route 
 app.use(contestRoute)
 
-
+// payment router 
+app.use(paymentRouter)
 
 
 
