@@ -1,11 +1,14 @@
 const Payment = require("../../Model/userPaymentDetails");
 
 const userPaymentDetails = async (req, res) => {
+  try {
     const info = req.body;
     const newInfo = new Payment(info);
-    const paymentResult = await newInfo.save()
-    console.log(paymentResult);
-    res.send({ paymentResult });
+    await newInfo.save();
+    res.send({ success:true });
+  } catch (error) {
+    console.error(error);
   }
+};
 
-  module.exports=userPaymentDetails
+module.exports = userPaymentDetails;
