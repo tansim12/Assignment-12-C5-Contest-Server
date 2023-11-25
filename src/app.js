@@ -9,6 +9,7 @@ const userRoutes = require("./routes/userRoutes/index")
 const authenticationRoute = require("./routes/AuthenticationRoute/index")
 const contestRoute = require("./routes/Contest/index")
 const paymentRouter = require("./routes/Payment/index")
+const currentRoleRoute = require("./routes/User Current Role/index")
 
 
 
@@ -26,6 +27,10 @@ app.use(contestRoute)
 
 // payment router 
 app.use(paymentRouter)
+
+// current role 
+
+app.use(currentRoleRoute)
 
 
 
