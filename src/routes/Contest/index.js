@@ -4,6 +4,7 @@ const findContest = require("../../api/apiControlar/findContest");
 const patchContestTotalJoin = require("../../api/apiControlar/patchContestTotalJoin");
 const Contest = require("../../Model/contest");
 const ContestTag = require("../../Model/contestTag");
+const getPopularContest = require("../../api/apiControlar/getPopularContest");
 
 const router = express.Router();
 
@@ -24,8 +25,9 @@ router.post("/contestTag" , async(req , res)=>{
   res.send(result)
 })
 router.get("/contestTag" , async(req , res)=>{
-  const result = await ContestTag.find()
- 
+  const result = await ContestTag.find() 
   res.send(result)
 })
+
+router.get("/popularContest" , getPopularContest)
 module.exports = router;
