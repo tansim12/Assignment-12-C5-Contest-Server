@@ -6,6 +6,7 @@ const router = express.Router()
 router.post("/create-payment-intent" , paymentIntant)
 router.post("/userPaymentDetails" , userPaymentDetails)
 
+
 module.exports=router
 
 
