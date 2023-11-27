@@ -11,7 +11,7 @@ const contestRoute = require("./routes/Contest/index")
 const paymentRouter = require("./routes/Payment/index")
 const currentRoleRoute = require("./routes/User Current Role/index")
 const myContestRouter = require("./routes/MyContest/index")
-
+const creatorRouter = require("./routes/Creator/index")
 
 
 // normal middleware
@@ -34,6 +34,9 @@ app.use(currentRoleRoute)
 
 // get user base participate contest data 
 app.use(myContestRouter)
+
+// creator section 
+app.use(creatorRouter)
 
 
 
