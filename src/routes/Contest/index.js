@@ -5,6 +5,8 @@ const patchContestTotalJoin = require("../../api/apiControlar/patchContestTotalJ
 const Contest = require("../../Model/contest");
 const ContestTag = require("../../Model/contestTag");
 const getPopularContest = require("../../api/apiControlar/getPopularContest");
+const deleteContest = require("../../api/apiControlar/deleteContest");
+const patchContest = require("../../api/apiControlar/patchContest");
 
 const router = express.Router();
 
@@ -20,14 +22,17 @@ router.post("/contests", async (req, res) => {
     console.error(error);
   }
 });
-router.post("/contestTag" , async(req , res)=>{
-  const result = await ContestTag.insertMany(req.body)
-  res.send(result)
-})
-router.get("/contestTag" , async(req , res)=>{
-  const result = await ContestTag.find() 
-  res.send(result)
-})
+router.post("/contestTag", async (req, res) => {
+  const result = await ContestTag.insertMany(req.body);
+  res.send(result);
+});
+router.get("/contestTag", async (req, res) => {
+  const result = await ContestTag.find();
+  res.send(result);
+});
+router.get("/popularContest", getPopularContest);
 
-router.get("/popularContest" , getPopularContest)
+router.delete("/contest/:_id", deleteContest);
+router.patch("/creatorUpdateContest/:_id", patchContest );
+
 module.exports = router;
