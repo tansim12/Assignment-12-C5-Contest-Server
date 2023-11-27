@@ -4,7 +4,7 @@ const Contest = require("../../Model/contest");
 const getPopularContest = async (req, res) => {
   try {
     const search = req.query.search;
-    let queryObj = {};
+    let queryObj = {status:"approved"};
     if (search) {
       queryObj.tag = { $regex: search, $options: "i" };
     }
