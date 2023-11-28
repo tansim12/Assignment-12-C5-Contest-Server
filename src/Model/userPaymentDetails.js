@@ -33,6 +33,10 @@ const PaymentDetails = new Schema({
     type: Date,
     required: true,
   },
+  image:{
+    type:String,
+    required:true
+  }
 
 });
 
