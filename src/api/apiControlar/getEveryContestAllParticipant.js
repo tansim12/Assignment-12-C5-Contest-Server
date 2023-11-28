@@ -7,8 +7,9 @@ const everyContestAllParticipant = async (req, res) => {
     const size = parseInt(req.query.size);
     const skip = (page - 1) * size
     const result = await Payment.find({contestId:id}).skip(skip).limit(size)
-    const totalParticipantCount = await Payment.estimatedDocumentCount()
-    console.log(totalParticipantCount);
+    const participantCount = await Payment.find({contestId:id})
+    const totalParticipantCount = participantCount.length
+    
     if (result) {
       res.send({result , totalParticipantCount});
     }
