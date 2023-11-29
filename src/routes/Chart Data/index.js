@@ -5,6 +5,8 @@ const router = express.Router();
 router.get("/allChartsDataInfo", async (req, res) => {
   // const allTags = ["Article", "Business", "Gaming", "Photography", "Music"];
 
+//   using just leader board 
+
   try {
     const articleTag = await Contest.find({ tag: "Article" });
     const articleTagTotalJoin = articleTag?.reduce(
