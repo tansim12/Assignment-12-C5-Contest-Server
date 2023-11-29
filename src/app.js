@@ -12,6 +12,7 @@ const paymentRouter = require("./routes/Payment/index")
 const currentRoleRoute = require("./routes/User Current Role/index")
 const myContestRouter = require("./routes/MyContest/index")
 const creatorRouter = require("./routes/Creator/index")
+const chartDataRoute = require("./routes/Chart Data/index")
 
 
 // normal middleware
@@ -37,6 +38,9 @@ app.use(myContestRouter)
 
 // creator section 
 app.use(creatorRouter)
+
+// chart data 
+app.use(chartDataRoute)
 
 
 

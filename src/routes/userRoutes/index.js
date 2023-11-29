@@ -16,4 +16,5 @@ router.patch("/users/:email", patchUserDetails);
 router.get("/userTotalWinner/:email", getUserFindWinner);
 router.get("/userTotalParticipant/:email", getUserTotalParticipant);
 router.get("/totalWinner" ,totalWinner )
+
 module.exports = router;
