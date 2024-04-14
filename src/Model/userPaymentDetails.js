@@ -36,6 +36,14 @@ const PaymentDetails = new Schema({
   image:{
     type:String,
     required:true
+  },
+  paymentType:{
+    type:String,
+    required:true
+  },
+  isPayment:{
+    type:Boolean,
+    
   }
 
 });
